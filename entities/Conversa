@@ -1,0 +1,75 @@
+{
+  "name": "Conversa",
+  "type": "object",
+  "properties": {
+    "contato_id": {
+      "type": "string",
+      "description": "ID do contato vinculado"
+    },
+    "contato_nome": {
+      "type": "string",
+      "description": "Nome do contato (cache)"
+    },
+    "contato_whatsapp": {
+      "type": "string",
+      "description": "WhatsApp do contato (cache)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "novo",
+        "em_atendimento",
+        "aguardando",
+        "resolvido",
+        "arquivado"
+      ],
+      "default": "novo",
+      "description": "Status atual da conversa"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags personalizadas da conversa"
+    },
+    "canal": {
+      "type": "string",
+      "enum": [
+        "whatsapp",
+        "chatbot",
+        "manual"
+      ],
+      "default": "whatsapp",
+      "description": "Canal de origem da conversa"
+    },
+    "atendente": {
+      "type": "string",
+      "description": "Email do atendente respons\u00e1vel"
+    },
+    "ultima_mensagem": {
+      "type": "string",
+      "description": "Preview da \u00faltima mensagem"
+    },
+    "ultima_mensagem_data": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data da \u00faltima mensagem"
+    },
+    "prioridade": {
+      "type": "string",
+      "enum": [
+        "baixa",
+        "media",
+        "alta",
+        "urgente"
+      ],
+      "default": "media",
+      "description": "Prioridade da conversa"
+    }
+  },
+  "required": [
+    "contato_nome",
+    "contato_whatsapp"
+  ]
+}

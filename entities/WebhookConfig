@@ -1,0 +1,41 @@
+{
+  "name": "WebhookConfig",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome descritivo do webhook"
+    },
+    "url": {
+      "type": "string",
+      "description": "URL do webhook (ex: N8N)"
+    },
+    "evento": {
+      "type": "string",
+      "enum": [
+        "nova_conversa",
+        "mensagem_recebida",
+        "status_alterado",
+        "novo_contato",
+        "tag_adicionada",
+        "prioridade_alterada",
+        "conversa_resolvida"
+      ],
+      "description": "Evento que dispara o webhook"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se o webhook est\u00e1 ativo"
+    },
+    "segredo": {
+      "type": "string",
+      "description": "Chave secreta para valida\u00e7\u00e3o (opcional)"
+    }
+  },
+  "required": [
+    "nome",
+    "url",
+    "evento"
+  ]
+}

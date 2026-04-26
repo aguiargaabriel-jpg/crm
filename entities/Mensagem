@@ -1,0 +1,49 @@
+{
+  "name": "Mensagem",
+  "type": "object",
+  "properties": {
+    "conversa_id": {
+      "type": "string",
+      "description": "ID da conversa vinculada"
+    },
+    "remetente": {
+      "type": "string",
+      "enum": [
+        "contato",
+        "atendente",
+        "chatbot"
+      ],
+      "description": "Quem enviou a mensagem"
+    },
+    "conteudo": {
+      "type": "string",
+      "description": "Conte\u00fado da mensagem"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "texto",
+        "imagem",
+        "audio",
+        "documento",
+        "video"
+      ],
+      "default": "texto",
+      "description": "Tipo da mensagem"
+    },
+    "arquivo_url": {
+      "type": "string",
+      "description": "URL do arquivo anexado"
+    },
+    "lida": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se a mensagem foi lida"
+    }
+  },
+  "required": [
+    "conversa_id",
+    "conteudo",
+    "remetente"
+  ]
+}

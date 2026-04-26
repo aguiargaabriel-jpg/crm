@@ -1,0 +1,71 @@
+{
+  "name": "ListaTransmissao",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome da lista de transmiss\u00e3o"
+    },
+    "mensagem": {
+      "type": "string",
+      "description": "Mensagem a ser enviada"
+    },
+    "intervalo_segundos": {
+      "type": "number",
+      "description": "Tempo em segundos entre cada envio",
+      "default": 30
+    },
+    "contatos": {
+      "type": "array",
+      "description": "Lista de contatos selecionados",
+      "items": {
+        "type": "object",
+        "properties": {
+          "contato_id": {
+            "type": "string"
+          },
+          "contato_nome": {
+            "type": "string"
+          },
+          "contato_whatsapp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pendente",
+              "enviado",
+              "erro"
+            ],
+            "default": "pendente"
+          },
+          "enviado_em": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "webhook_url": {
+      "type": "string",
+      "description": "URL do webhook para disparo"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "rascunho",
+        "em_andamento",
+        "concluido",
+        "pausado"
+      ],
+      "default": "rascunho"
+    },
+    "total_enviados": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "nome",
+    "mensagem"
+  ]
+}

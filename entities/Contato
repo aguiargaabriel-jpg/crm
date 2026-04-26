@@ -1,0 +1,38 @@
+{
+  "name": "Contato",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome completo do contato"
+    },
+    "whatsapp": {
+      "type": "string",
+      "description": "N\u00famero do WhatsApp com DDD"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email do contato"
+    },
+    "empresa": {
+      "type": "string",
+      "description": "Empresa do contato"
+    },
+    "cargo": {
+      "type": "string",
+      "description": "Cargo do contato"
+    },
+    "notas": {
+      "type": "string",
+      "description": "Observa\u00e7\u00f5es sobre o contato"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "URL da foto do contato"
+    }
+  },
+  "required": [
+    "nome",
+    "whatsapp"
+  ]
+}
