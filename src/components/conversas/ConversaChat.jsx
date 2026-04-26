@@ -122,3 +122,4 @@ export default function ConversaChat({ conversaId }) {
       </form>
     </div>
   );
+}
